@@ -1,0 +1,29 @@
+group 'at.bayava'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'idea'
+
+configurations {
+	provided
+	compile.extendsFrom provided
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
+}
+
+dependencies {
+	compile 'org.scala-lang:scala-dist:2.11.+'
+	compile 'org.json4s:json4s-native_2.11:3.2.9'
+	compile 'org.apache.logging.log4j:log4j-core:2.+'
+}
